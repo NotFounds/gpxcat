@@ -1,0 +1,74 @@
+---
+source: src/render/json.rs
+expression: "render(&crate::render::tests::day_trip_summary(), true)"
+---
+{
+  "name": "day_trip.gpx",
+  "timezone": "Asia/Tokyo",
+  "start": "2026-05-04T08:30:00+09:00",
+  "end": "2026-05-04T09:50:45+09:00",
+  "nights": 0,
+  "points": 12,
+  "distance_m": 2005.1631400654144,
+  "elevation": {
+    "gain_m": 410.0,
+    "loss_m": 405.0,
+    "max": {
+      "ele_m": 1210.0,
+      "time": "2026-05-04T08:55:00+09:00",
+      "lat": 35.009,
+      "lon": 139.0
+    },
+    "min": {
+      "ele_m": 800.0,
+      "time": "2026-05-04T08:30:00+09:00",
+      "lat": 35.0,
+      "lon": 139.0
+    }
+  },
+  "duration": {
+    "elapsed_s": 4845,
+    "moving_s": 3045,
+    "stop_rule": {
+      "window_s": 120,
+      "max_speed_mps": 0.2
+    }
+  },
+  "start_end_distance_m": 43.12165706928591,
+  "days": [
+    {
+      "date": "2026-05-04",
+      "start": "08:30:00",
+      "end": "09:50:45",
+      "points": 12,
+      "distance_m": 2005.1631400654144,
+      "gain_m": 410.0,
+      "loss_m": 405.0,
+      "max_ele_m": 1210.0
+    }
+  ],
+  "splits": [
+    {
+      "start": "2026-05-04T08:30:00+09:00",
+      "end": "2026-05-04T08:55:00+09:00",
+      "distance_m": 1000.7543398012492,
+      "elapsed_s": 1500,
+      "moving_s": 1500,
+      "speed_mps": 0.6671695598674995,
+      "pace_s_per_km": 1498.8693431975537,
+      "gain_m": 410.0,
+      "loss_m": 0.0
+    },
+    {
+      "start": "2026-05-04T08:55:00+09:00",
+      "end": "2026-05-04T09:50:45+09:00",
+      "distance_m": 1004.4088002641652,
+      "elapsed_s": 3345,
+      "moving_s": 1545,
+      "speed_mps": 0.6501027833425017,
+      "pace_s_per_km": 1538.2183027405338,
+      "gain_m": 0.0,
+      "loss_m": 405.0
+    }
+  ]
+}

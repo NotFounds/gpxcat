@@ -1,0 +1,60 @@
+---
+source: src/render/json.rs
+expression: "render(&crate::render::tests::sample_summary())"
+---
+{
+  "name": "合成テスト山行 (北峰・南峰)",
+  "timezone": "Asia/Tokyo",
+  "start": "2026-08-15T06:00:00+09:00",
+  "end": "2026-08-17T12:59:30+09:00",
+  "nights": 2,
+  "points": 11,
+  "distance_m": 8947.508528173046,
+  "elevation": {
+    "gain_m": 222.70000000000005,
+    "loss_m": 512.5,
+    "max": {
+      "ele_m": 1720.7,
+      "time": "2026-08-17T05:15:00+09:00",
+      "lat": 36.405,
+      "lon": 137.504
+    },
+    "min": {
+      "ele_m": 1210.2,
+      "time": "2026-08-17T12:59:30+09:00",
+      "lat": 36.35,
+      "lon": 137.45
+    }
+  },
+  "duration": {
+    "elapsed_s": 197970,
+    "moving_s": 27570,
+    "stop_rule": {
+      "window_s": 120,
+      "max_speed_mps": 0.2
+    }
+  },
+  "start_end_distance_m": 7137.879987413077,
+  "days": [
+    {
+      "date": "2026-08-15",
+      "start": "06:00:00",
+      "end": "06:30:00",
+      "points": 5,
+      "distance_m": 429.0871077082819,
+      "gain_m": 150.0,
+      "loss_m": 0.0,
+      "max_ele_m": 1650.0
+    },
+    {
+      "date": "2026-08-17",
+      "start": "05:00:00",
+      "end": "12:59:30",
+      "points": 6,
+      "distance_m": 8504.147721230393,
+      "gain_m": 72.70000000000005,
+      "loss_m": 510.5,
+      "max_ele_m": 1720.7
+    }
+  ]
+}

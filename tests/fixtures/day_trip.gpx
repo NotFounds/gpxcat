@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- テスト用に合成した記録。実在の山行ではない -->
+<gpx version="1.1" creator="gpxcat test" xmlns="http://www.topografix.com/GPX/1/1">
+  <trk>
+    <trkseg>
+      <trkpt lat="35.0000000" lon="139.0000000"><ele>800</ele><time>2026-05-03T23:30:00Z</time></trkpt>
+      <trkpt lat="35.0018000" lon="139.0000000"><ele>870</ele><time>2026-05-03T23:35:00Z</time></trkpt>
+      <trkpt lat="35.0036000" lon="139.0000000"><ele>950</ele><time>2026-05-03T23:40:00Z</time></trkpt>
+      <trkpt lat="35.0054000" lon="139.0000000"><ele>1040</ele><time>2026-05-03T23:45:00Z</time></trkpt>
+      <trkpt lat="35.0072000" lon="139.0000000"><ele>1130</ele><time>2026-05-03T23:50:00Z</time></trkpt>
+      <trkpt lat="35.0090000" lon="139.0000000"><ele>1210</ele><time>2026-05-03T23:55:00Z</time></trkpt>
+      <trkpt lat="35.0090000" lon="139.0001000"><ele>1210</ele><time>2026-05-04T00:25:00Z</time></trkpt>
+      <trkpt lat="35.0072000" lon="139.0010000"><ele>1120</ele><time>2026-05-04T00:30:00Z</time></trkpt>
+      <trkpt lat="35.0054000" lon="139.0010000"><ele>1010</ele><time>2026-05-04T00:35:00Z</time></trkpt>
+      <trkpt lat="35.0036000" lon="139.0010000"><ele>920</ele><time>2026-05-04T00:40:00Z</time></trkpt>
+      <trkpt lat="35.0018000" lon="139.0010000"><ele>850</ele><time>2026-05-04T00:45:00Z</time></trkpt>
+      <trkpt lat="35.0003000" lon="139.0003000"><ele>805</ele><time>2026-05-04T00:50:45Z</time></trkpt>
+    </trkseg>
+  </trk>
+</gpx>
