@@ -122,3 +122,28 @@ fn detail_adds_splits() {
     let text = String::from_utf8(gpxcat(&["--detail", &path]).stdout).unwrap();
     assert!(text.contains("区間（1 km ごと"));
 }
+
+#[test]
+fn raw_json_converts_whole_xml() {
+    let out = gpxcat(&["--raw-json", &fixture("sample.gpx")]);
+    assert_eq!(out.status.code(), Some(0));
+    let json: serde_json::Value = serde_json::from_slice(&out.stdout).unwrap();
+    assert_eq!(json["gpx"]["wpt"][0]["name"], "読まない地点");
+
+    // 集計用のオプションとは同時に使えない
+    for option in [&["--format", "json"][..], &["--tz", "UTC"], &["--detail"]] {
+        let mut args = vec!["--raw-json"];
+        args.extend_from_slice(option);
+        args.push("x.gpx");
+        assert_eq!(gpxcat(&args).status.code(), Some(2), "{option:?}");
+    }
+
+    // 点の値が欠けていても変換する
+    let path = temp_gpx(
+        "raw.gpx",
+        r#"<gpx><trk><trkseg><trkpt lat="35"/></trkseg></trk></gpx>"#,
+    );
+    assert_eq!(gpxcat(&["--raw-json", &path]).status.code(), Some(0));
+    let path = temp_gpx("broken.gpx", "<gpx><trk></gpx>");
+    assert_eq!(gpxcat(&["--raw-json", &path]).status.code(), Some(1));
+}
