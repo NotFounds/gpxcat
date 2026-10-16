@@ -1,4 +1,5 @@
 mod gpx;
+mod raw_json;
 mod render;
 mod summary;
 
@@ -38,6 +39,13 @@ struct Cli {
 
     #[arg(long, help = "1 km ごとの区間のペースと速度も出力する")]
     detail: bool,
+
+    #[arg(
+        long,
+        conflicts_with_all = ["format", "tz", "detail"],
+        help = "集計せず、GPX の XML 全体をそのまま JSON に変換して出力する"
+    )]
+    raw_json: bool,
 }
 
 #[derive(Clone, Copy, ValueEnum)]
@@ -67,6 +75,9 @@ fn main() -> ExitCode {
 fn run(cli: &Cli) -> Result<String, String> {
     let xml = std::fs::read_to_string(&cli.file)
         .map_err(|e| format!("{} を読み込めません: {e}", cli.file.display()))?;
+    if cli.raw_json {
+        return raw_json::convert(&xml).map_err(|e| format!("{}: {e}", cli.file.display()));
+    }
     let file_name = cli
         .file
         .file_name()
